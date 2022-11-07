@@ -18,40 +18,82 @@ export default createStore({
         "Деплой",
       ],
     },
-    routes: [
-      {
-        context: "global",
-        title: "/start",
+    componentContents: {
+      route: {
         buttons: [
-          "добавить сообщение",
-          "испольозвать клавиатуру",
-          "использовать парсер",
-          "прекрепить файл",
-          "испольозвать обработчик",
+          {
+            label: "добавить сообщение",
+          },
+          {
+            label: "использовать клавиатуру",
+          },
+          {
+            label: "использовать парсер",
+          },
+          {
+            label: "прекрепить файл",
+          },
+          {
+            label: "испольозвать обработчик",
+          },
         ],
       },
-      {
-        context: "global",
-        title: "/help",
+      handler: {
         buttons: [
-          "добавить сообщение",
-          "испольозвать клавиатуру",
-          "использовать парсер",
-          "прекрепить файл",
-          "испольозвать обработчик",
+          {
+            label: "добавить маршрут",
+          },
         ],
+      },
+    },
+    components: [
+      {
+        isMoving: false,
+        isHidden: false,
+        isAbsolutePosition: false,
+        dragStartElementCord: { x: null, y: null },
+        dragBeforeHideElementCord: { x: null, y: null },
+        type: "route",
+        header: {
+          context: "global",
+          title: "/start",
+          routeContextPrefix: "Для @",
+        },
+      },
+      {
+        isMoving: false,
+        isHidden: false,
+        isAbsolutePosition: false,
+        dragStartElementCord: { x: null, y: null },
+        dragBeforeHideElementCord: { x: null, y: null },
+        type: "handler",
+        header: {
+          context: "start",
+          title: "Обработчик",
+          routeContextPrefix: "Для /",
+        },
       },
     ],
   },
   getters: {
-    getProfile(state) {
-      return state.profile;
+    getProfile({ profile }) {
+      return profile;
     },
-    getSidebar(state) {
-      return state.sidebar;
+    getSidebar({ sidebar }) {
+      return sidebar;
     },
-    getRoutes(state) {
-      return state.routes;
+    getComponents({ components }) {
+      return components;
+    },
+    getComponentContents:
+      ({ componentContents }) =>
+      (type) => {
+        return componentContents[type];
+      },
+  },
+  mutations: {
+    hideRoute({ routes }, index) {
+      routes.splice(index, 1);
     },
   },
   actions: {},

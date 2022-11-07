@@ -3,10 +3,12 @@
     <div class="header__content">
       <h2 class="header__title">{{ title }}</h2>
       <span class="header__routeContext"
-        >{{ routeContextPrefix }} {{ routeContext }}</span
+        >{{ routeContextPrefix }}{{ routeContext }}</span
       >
     </div>
-    <button class="header__action material-icons">{{ actionIcon }}</button>
+    <button class="header__action material-icons" @click="callAction()">
+      {{ actionIcon }}
+    </button>
   </div>
 </template>
 
@@ -18,6 +20,11 @@ export default {
     routeContextPrefix: String,
     routeContext: String,
     actionIcon: String,
+  },
+  methods: {
+    callAction() {
+      this.$emit("callAction");
+    },
   },
 };
 </script>
