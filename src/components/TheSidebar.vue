@@ -40,13 +40,12 @@ export default {
 
 <style lang="scss">
 .sidebar {
-  max-width: 25vw;
+  max-width: 20vw;
   min-width: var(--componentMinWidth);
   display: flex;
   flex-direction: column;
   height: 100vh;
   background: #f5f5f5;
-  border: 1px solid #f2f2f2;
   box-shadow: 2px 0px 16px #0000001a;
   &__buttons {
     display: flex;

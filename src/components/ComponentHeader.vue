@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
 .header {
+  user-select: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -54,17 +55,24 @@ export default {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
+    cursor: pointer;
   }
   &__action {
     background: #7200ca;
     color: #fff;
     border-radius: 4px;
+    padding: 8px;
+    align-self: stretch;
     aspect-ratio: 1 / 1;
     border: none;
     font-size: 20px;
     line-height: 20px;
+    cursor: pointer;
+    &:hover {
+      background: #6600b4;
+    }
   }
 }
 </style>

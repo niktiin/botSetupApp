@@ -19,5 +19,6 @@ h5 {
 body {
   height: 100vh;
   overflow-y: hidden;
+  background: #e0e0e0;
 }
 </style>

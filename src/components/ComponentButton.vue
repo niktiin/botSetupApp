@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name: "component_name_button",
   props: {
     label: String,
   },
@@ -18,7 +19,11 @@ export default {
   border-radius: 4px;
   border: none;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 19px;
+  cursor: pointer;
+  &:hover {
+    background: #aa00ff;
+  }
 }
 </style>

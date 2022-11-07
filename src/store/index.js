@@ -10,12 +10,38 @@ export default createStore({
         "Создать маршут",
         "Удалить маршрут",
         "Скрыть маршруты",
+        "Создать обработчик",
+        "Удалить обработчик",
         "Скрыть обработчики",
         "Экспорт",
         "Импорт",
         "Деплой",
       ],
     },
+    routes: [
+      {
+        context: "global",
+        title: "/start",
+        buttons: [
+          "добавить сообщение",
+          "испольозвать клавиатуру",
+          "использовать парсер",
+          "прекрепить файл",
+          "испольозвать обработчик",
+        ],
+      },
+      {
+        context: "global",
+        title: "/help",
+        buttons: [
+          "добавить сообщение",
+          "испольозвать клавиатуру",
+          "использовать парсер",
+          "прекрепить файл",
+          "испольозвать обработчик",
+        ],
+      },
+    ],
   },
   getters: {
     getProfile(state) {
@@ -24,8 +50,10 @@ export default createStore({
     getSidebar(state) {
       return state.sidebar;
     },
+    getRoutes(state) {
+      return state.routes;
+    },
   },
-  mutations: {},
   actions: {},
   modules: {},
 });
